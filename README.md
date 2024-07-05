@@ -16,7 +16,7 @@ We recommend using GitHub Desktop to download course materials. This desktop app
 
 ## 1 - Set up GitHub Desktop
 
-1.  Install [Github Desktop](https://desktop.github.com/).
+1.  Create an account on https://github.com/ and Install [Github Desktop](https://desktop.github.com/).
 2.  Once installed, go to our [R workshop repository on GitHub](https://github.com/agency-fund/r-workshop), and click on the green "Code" button
 3.  Choose "Open with GitHub Desktop", which prompts you to the GitHub Desktop app.
 4.  Choose whichever local folder path that you want to store and sync the code locally.

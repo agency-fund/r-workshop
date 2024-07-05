@@ -96,9 +96,11 @@ style_mono_accent(
 
 # Learning tools
 
+- A Medium post about [Stata and GitHub Integration](https://medium.com/the-stata-guide/stata-and-github-integration-8c87ddf9784a)
+
 - A chapter on version control in ["An Introduction to R"](https://intro2r.com/github_r.html)
 
-- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
+- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) by GitHub
 
 ---
 
