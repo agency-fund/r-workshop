@@ -92,9 +92,11 @@ class: center, middle, inverse, title-slide
 
 # Learning tools
 
+- A Medium post about [Stata and GitHub Integration](https://medium.com/the-stata-guide/stata-and-github-integration-8c87ddf9784a)
+
 - A chapter on version control in ["An Introduction to R"](https://intro2r.com/github_r.html)
 
-- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
+- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) by GitHub
 
 ---
 
@@ -267,7 +269,7 @@ A README file is usually a markdown file (README.md) that is used for describing
 - You can use `pull request` to merge branches.
 
 .aligncenter[
-&lt;img src="figures/branching_cartoon.png" height="400"&gt;
+&lt;img src="figures/branching_illustration.png" height="350"&gt;
 ]
 
 ---
@@ -365,17 +367,31 @@ A README file is usually a markdown file (README.md) that is used for describing
 
 ---
 
-# Why do this?
+# Why do this (even for one person or a small team)?
 
 --
 
-- Multiple people can work on Stata/R codes for a same project at the same time.
+- You have a clean history of why certain changes are made to certain .do files or R script (i.e., commit history).
+
+.aligncenter[
+&lt;img src="figures/commit_history.png" height="350"&gt;
+]
+
+---
+
+# Why do this (even for one person or a small team)?
 
 --
 
-- You have a clean history of why certain changes are made to certain .do files or R script.
+- You know who is responsible for what changes made to each line of code (i.e., `git blame`).
 
---
+.aligncenter[
+&lt;img src="figures/git_blame.png" height="300"&gt;
+]
+
+---
+
+# Why do this (even for one person or a small team)?
 
 - You can go back in time and restore certain commits if recent commits don't work properly.
 
@@ -589,6 +605,34 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+<style>
+.logo {
+  background-image: url(figures/taf_logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content.title-slide'
+    //'.remark-slide-content' +
+    //':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    //':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {

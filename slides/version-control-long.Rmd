@@ -5,6 +5,8 @@ author: "The Agency Fund R Workshop Series"
 institute: "Zezhen (Michael) Wu"
 output:
   xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
     css: xaringan-themer.css
     nature:
       countIncrementalSlides: false
@@ -28,7 +30,12 @@ library(tidyverse)
 #   code_font_google = google_font("Fira Mono")
 # )
 style_mono_accent(
-  base_color = "#4682B4",
+  base_color = "#F1AE3F",
+  text_color = "black",
+  header_color = "#D68C11",
+  link_color = "#D68C11",
+  text_bold_color = "#D68C11",
+  code_inline_color = "#D68C11",
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono")
@@ -273,7 +280,7 @@ A README file is usually a markdown file (README.md) that is used for describing
 - You can use `pull request` to merge branches.
 
 .aligncenter[
-<img src="figures/branching_cartoon.png" height="400">
+<img src="figures/branching_illustration.png" height="350">
 ]
 
 ---
@@ -371,17 +378,31 @@ A README file is usually a markdown file (README.md) that is used for describing
 
 ---
 
-# Why do this?
+# Why do this (even for one person or a small team)?
 
 --
 
-- Multiple people can work on Stata/R codes for a same project at the same time.
+- You have a clean history of why certain changes are made to certain .do files or R script (i.e., commit history).
+
+.aligncenter[
+<img src="figures/commit_history.png" height="350">
+]
+
+---
+
+# Why do this (even for one person or a small team)?
 
 --
 
-- You have a clean history of why certain changes are made to certain .do files or R script.
+- You know who is responsible for what changes made to each line of code (i.e., `git blame`).
 
---
+.aligncenter[
+<img src="figures/git_blame.png" height="300">
+]
+
+---
+
+# Why do this (even for one person or a small team)?
 
 - You can go back in time and restore certain commits if recent commits don't work properly.
 
