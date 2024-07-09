@@ -30,7 +30,7 @@ library(tidyverse)
 #   code_font_google = google_font("Fira Mono")
 # )
 style_mono_accent(
-  base_color = "#F1AE3F",
+  base_color = "#F8B500",
   text_color = "black",
   header_color = "#D68C11",
   link_color = "#D68C11",
