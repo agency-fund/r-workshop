@@ -215,7 +215,7 @@ ggplot(student_subset_2018,
 ]
 
 .pull-right[
-```{r, echo = F, fig.height = 2.5, fig.width=2, dpi = 300}
+```{r, echo = F, fig.align='center', fig.height = 4, fig.width=2, dpi = 100}
 # Plot the relationship between
 # math score and family wealth 
 # (r = 0.31)

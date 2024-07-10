@@ -97,7 +97,7 @@ class: middle, center
 
 .pull-left[
 
-``` r
+```r
 # Load PISA 2018 data
 
 library(learningtower)
@@ -127,7 +127,7 @@ ggplot(student_subset_2018,
 
 .pull-left[
 
-``` r
+```r
 # Load PISA 2018 data
 
 library(learningtower)
@@ -157,7 +157,7 @@ ggplot(student_subset_2018,
 
 .pull-left[
 
-``` r
+```r
 # Load PISA 2018 data
 
 library(learningtower)
@@ -178,7 +178,7 @@ ggplot(student_subset_2018,
 ]
 
 .pull-right[
-![](lie_with_graph_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+&lt;img src="lie_with_graph_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -208,7 +208,7 @@ class: middle, center
 
 .pull-left[
 
-``` r
+```r
 # Group by 'book' and calculate the mean reading score for each category
 df &lt;- student_subset_2018 %&gt;%
   group_by(gender) %&gt;%
@@ -238,7 +238,7 @@ ggplot(df, aes(x = gender,
 
 .pull-left[
 
-``` r
+```r
 # Create the bar plot
 ggplot(df, aes(x = gender, 
                y = mean_read)) +
@@ -262,7 +262,7 @@ ggplot(df, aes(x = gender,
 
 .pull-left[
 
-``` r
+```r
 # Create the bar plot
 ggplot(df, aes(x = gender, 
                y = mean_read)) +
