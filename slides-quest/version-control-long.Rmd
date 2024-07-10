@@ -1,0 +1,515 @@
+---
+title: "Long Workshop"
+subtitle: "Version Control with GitHub Desktop"
+author: "The Agency Fund R Workshop Series"
+institute: "Zezhen (Michael) Wu"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    css: xaringan-themer.css
+    nature:
+      countIncrementalSlides: false
+      highlightLines: true
+      highlightStyle: solarized-light
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = F, cache = F)
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+library(magrittr)
+library(flair)
+library(tidyverse)
+# xaringan::inf_mr()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+# style_mono_accent(
+#   text_font_google = google_font("Montserrat", "300", "300i"),
+#   code_font_google = google_font("Fira Mono")
+# )
+style_mono_accent(
+  base_color = "#F8B500",
+  text_color = "black",
+  header_color = "#D68C11",
+  link_color = "#D68C11",
+  text_bold_color = "#D68C11",
+  code_inline_color = "#D68C11",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
+<style>
+:root {
+  --font12: 12pt;
+  --font10: 10pt;
+  --font8: 8pt;
+}
+
+.font12 > table {
+  font-size: var(--font12);
+}
+
+.font12 > p {
+  font-size: var(--font12);
+}
+
+.font12 > pre .remark-code-line {
+  font-size: var(--font12);
+}
+
+.font10 > table {
+  font-size: var(--font10);
+}
+
+.font10 > p {
+  font-size: var(--font10);
+}
+
+.font10 > pre .remark-code-line {
+  font-size: var(--font10);
+}
+
+.font8 > table {
+  font-size: var(--font8);
+}
+
+.font8 > p {
+  font-size: var(--font8);
+}
+
+.font8 > pre .remark-code-line {
+  font-size: var(--font8);
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+</style>
+
+# Agenda
+
+- Understanding git
+
+- Using the GitHub Desktop software to execute version control for your coding project (whether it is Stata or R)
+
+- Using git in Rstudio
+
+---
+
+# Learning tools
+
+- A Medium post about [Stata and GitHub Integration](https://medium.com/the-stata-guide/stata-and-github-integration-8c87ddf9784a)
+
+- A chapter on version control in ["An Introduction to R"](https://intro2r.com/github_r.html)
+
+- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) by GitHub
+
+---
+
+# What is Version Control?
+
+.pull-left[
+
+A Version Control System (VCS) keeps a record of all the changes you make to your files that make up a particular project and allows you to revert to previous versions of files if you need to. 
+
+****
+
+**Think about a Word Doc that tracks each sentence that you write and allows you to go back to previous versions of the SAME document, WITHOUT the need to create multiple documents.**
+]
+
+.pull-right[
+<img src="figures/final_doc.png" height="450">
+]
+
+---
+
+# Why use Version Control?
+
+- **Collaboration**: Enables multiple teammates to work on a project
+
+- **Tracking Changes**: Keeps a history of who made what changes
+
+- **Reverting**: Ability to undo changes, restoring previous versions
+
+- **Conflict Resolution**: Helps in resolving conflicting changes
+
+- **Enhanced Workflow**: Tailors to different development workflows
+
+---
+
+# What is Git and GitHub?
+
+.pull-left[
+## Git
+
+- Git is a distributed version control system that tracks changes in any set of computer files.
+
+- All the files that make up a project is called a *repository*.
+]
+
+.pull-right[
+## GitHub
+
+- GitHub is a web-based hosting service for Git repositories which allows you to create a remote copy of your local version-controlled project.
+]
+
+.aligncenter[
+<img src="figures/git_workflow.png" height="230">
+]
+
+---
+
+# Basic Git Operations 
+
+- Committing Changes
+
+- Pushing to Remote Repositories
+
+- Pulling from Remote Repositories
+
+- Branching and Merging
+
+****
+
+**Note: **
+
+- You can do the above operations by writing Git commands in a command line tool (e.g., Terminal on Mac or PowerShell on Windows), after [installing git](https://github.com/git-guides/install-git), which can be somewhat difficult to learn if you are new to programming.
+
+- An alternative way is to use Github Desktop: https://desktop.github.com/, which allows you to click a few buttons in a visual interface, together with the option to writing commands like `git commit` in a command line tool.
+
+---
+
+# Git Workflow
+
+.aligncenter[
+<img src="figures/git_workflow_full.png" height="450">
+]
+
+.font10[
+
+Source: https://dev.to/mollynem/git-github--workflow-fundamentals-5496
+
+]
+
+---
+
+# Using GitHub Desktop
+
+1. Create an account on https://github.com/
+2. Download GitHub Desktop on https://desktop.github.com/
+
+.aligncenter[
+<img src="figures/github_desktop.png" height="400">
+]
+
+---
+
+# 1. Create your own repository
+
+.pull-left[
+<img src="figures/create_repo_1.png" height="200">
+
+Make sure you check "Add a README file", otherwise the repo is empty and GitHub will ask you to add at least one file to the repo.
+
+A README file is usually a markdown file (README.md) that is used for describing the repo.
+]
+
+.pull-right[
+<img src="figures/create_repo_2.png" height="400">
+]
+
+---
+
+# 2. Clone the repository
+
+.aligncenter[
+<img src="figures/clone_repo_1.png" height="300">
+]
+
+.aligncenter[
+<img src="figures/clone_repo_2.png" height="200">
+]
+
+---
+
+# 3. Make changes to a file
+
+- Open README.md using any text editor on your computer
+
+- Add a sentence and save the document
+
+.aligncenter[
+<img src="figures/commit_changes_1.png" height="300">
+]
+
+---
+
+# 4. Commit changes to `main`
+
+.aligncenter[
+<img src="figures/commit_changes_2.png" height="500">
+]
+
+---
+
+# 5. Push changes to `origin`
+
+.aligncenter[
+<img src="figures/push_changes.png" height="500">
+]
+
+---
+
+# 6. See changes on GitHub
+
+.aligncenter[
+<img src="figures/see_changes_1.png" height="300">
+]
+
+---
+
+# Branching
+
+- Branching is about creating parallel changes without affecting the `main`.
+
+- You can use `pull request` to merge branches.
+
+.aligncenter[
+<img src="figures/branching_illustration.png" height="350">
+]
+
+---
+
+# 7. Create a branch
+
+.pull-left[
+<img src="figures/branch_1.png" height="200">
+]
+
+.pull-right[
+<img src="figures/branch_2.png" height="200">
+]
+
+.aligncenter[
+<img src="figures/branch_3.png" height="300">
+]
+
+---
+
+# 8. Publish the branch
+.aligncenter[
+<img src="figures/publish_branch_1.png" height="50">
+]
+
+.aligncenter[
+<img src="figures/publish_branch_2.png" height="200">
+]
+
+.aligncenter[
+<img src="figures/publish_branch_3.png" height="50">
+]
+
+---
+
+# 9. Pull request
+
+.aligncenter[
+<img src="figures/pull_request_1.png" height="80">
+]
+
+.aligncenter[
+<img src="figures/pull_request_2.png" height="400">
+]
+
+---
+
+# 10. Merge pull request
+
+.aligncenter[
+<img src="figures/merge_pull_request.png" height="500">
+]
+
+---
+
+# 11. See changes on GitHub
+
+.aligncenter[
+<img src="figures/see_changes_2.png" height="300">
+]
+
+---
+
+# What if there are conflicts?
+
+.pull-left[
+<img src="figures/pull_request_conflict_1.png" height="300">
+]
+
+.pull-right[
+<img src="figures/pull_request_conflict_2.png" height="200">
+]
+
+.aligncenter[
+<img src="figures/pull_request_conflict_3.png" height="100">
+]
+
+---
+
+# Resolving conflicts
+
+.aligncenter[
+<img src="figures/resolve_conflict_1.png" height="100">
+]
+
+.aligncenter[
+<img src="figures/resolve_conflict_2.png" height="150">
+]
+
+****
+
+- Depending on which programming language you are using, you can choose the code editor to resolve these conflicts on your own branch.
+
+- Usually a more senior data manager checks code conflicts and make the executive decision to resolve conflicts and merge.
+
+---
+
+# Why do this (even for one person or a small team)?
+
+--
+
+- You have a clean history of why certain changes are made to certain .do files or R script (i.e., commit history).
+
+.aligncenter[
+<img src="figures/commit_history.png" height="350">
+]
+
+---
+
+# Why do this (even for one person or a small team)?
+
+--
+
+- You know who is responsible for what changes made to each line of code (i.e., `git blame`).
+
+.aligncenter[
+<img src="figures/git_blame.png" height="300">
+]
+
+---
+
+# Why do this (even for one person or a small team)?
+
+- You can go back in time and restore certain commits if recent commits don't work properly.
+
+--
+
+- Codes are stored separately from data files, so that codes are open-sourced and reproducible, while data files (on Dropbox) can be private unless made public.
+
+--
+
+****
+
+### Do not use git together with cloud storage for the same project files!
+
+--
+
+Cloud storage services automatically sync files, which can lead to conflicts with Git's own version control mechanisms.
+
+---
+
+# Recommended steps
+
+--
+
+- Use git and GitHub for version control with any code (including Stata .do files, R scripts, markdown files, R markdown files, etc.)
+
+  - For instance, see the [dashboard repository](https://github.com/youth-impact/dashboard) that Jake made for Youth Impact
+  
+  - Avoid putting any codes on cloud drives, especially when collaborating with others on coding
+
+--
+
+- DO NOT push data files to GitHub, store them on Dropbox/Google Drive instead
+
+--
+
+- Create centralized data-only folders on Dropbox, in lieu of project folders where data folders are sub-folders
+
+--
+
+- Create unified file and data variable naming rules across projects
+
+--
+
+- Include a README for each project and data folder
+
+--
+
+- Automate data cleaning as much as possible (check out the [`targets` package](https://books.ropensci.org/targets/))
+
+---
+
+# Bonus: Reverting a commit
+
+.aligncenter[
+<img src="figures/revert_commit.png" height="500">
+]
+
+---
+
+# Bonus: Fork a project
+
+.aligncenter[
+<img src="figures/fork_project.png" height="500">
+]
+
+---
+
+# Bonus: Pull from GitHub
+
+.aligncenter[
+<img src="figures/pull_origin.png" height="500">
+]
+
+---
+
+# Bonus: Network graph
+
+.aligncenter[
+<img src="figures/network_graph.png" height="300">
+]
+
+---
+
+# Bonus: Using git in R Studio
+
+- You may need to configure R Studio to get the Git tab in an R project. 
+
+- See tutorials [here](https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html) and [here](https://sites.northwestern.edu/researchcomputing/resources/using-git-and-github-with-r-rstudio/).
+
+.aligncenter[
+<img src="figures/rstudio_git.png" height="300">
+]
+
+---
+
+# Bonus: Using git for Stata do files
+
+- Check out this full tutorial [here](https://medium.com/the-stata-guide/stata-and-github-integration-8c87ddf9784a).
+
+- .do file is just another text file, so git is able to track changes in do files line by line.
+
+- All the steps that we learned today (commit, push, pull, etc.) are the same for text files including Stata do files.
+
+---
+
+# Bonus: An example data cleaning project
+
+- See [this github repository](https://github.com/littlehifive/dads_matter_cleaning) for how I structured a data cleaning project using `tidyverse` and `targets` and version controlled by git.
+
+- A streamlined data cleaning project involves [functional programming](http://adv-r.had.co.nz/Functional-programming.html), which requires putting every little steps into little functions, little functions into bigger functions, and bigger functions into building blocks of a data pipeline.
