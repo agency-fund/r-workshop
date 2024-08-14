@@ -241,7 +241,7 @@ ggplot(student_subset_2018,
 ## Solution: Banking to a "good" degree
 
 .aligncenter[
-<img src="figures/aspect-ratios.png" height="450">
+<img src="figures/lie_with_graph/aspect-ratios.png" height="450">
 ]
 
 .font10[
@@ -376,7 +376,7 @@ ggplot(df, aes(x = gender,
 ## This is more common than you think!
 
 .aligncenter[
-<img src="figures/baseball.png" height="450">
+<img src="figures/lie_with_graph/baseball.png" height="450">
 ]
 
 .font10[
@@ -389,7 +389,7 @@ Source: https://www.heap.io/blog/how-to-lie-with-data-visualization
 ## Another "good" one!
 
 .aligncenter[
-<img src="figures/fox-news.png" height="450">
+<img src="figures/lie_with_graph/fox-news.png" height="450">
 ]
 
 .font10[
@@ -402,7 +402,7 @@ Source: https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-exam
 ## Solution: Be honest and informative!
 
 .aligncenter[
-<img src="figures/fox-news-correct.png" height="450">
+<img src="figures/lie_with_graph/fox-news-correct.png" height="450">
 ]
 
 Source: https://medium.com/@thomas.ellyatt/bad-data-visualisation-real-life-examples-out-there-in-the-wild-eb5032329aeb
@@ -462,7 +462,7 @@ ggplot(student_subset_2018,
 ## Solution: Think about data-ink ratio!
 
 .aligncenter[
-<img src="figures/data-ink-ratio.png" height="450">
+<img src="figures/lie_with_graph/data-ink-ratio.png" height="450">
 ]
 
 .font10[
