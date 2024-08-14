@@ -3,4 +3,4 @@
 
 # renderthis::to_pdf("slides-quest/version-control-long.Rmd")
 # renderthis::to_pdf("slides-blitz/lie_with_graph.Rmd")
-# renderthis::to_pdf("slides-blitz/lie_with_graph.Rmd")
+# renderthis::to_pdf("slides-blitz/single_item_measure.Rmd")
